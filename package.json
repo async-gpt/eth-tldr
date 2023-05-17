@@ -6,17 +6,45 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "eslint": "eslint . --ext .ts --ext tsx --ext js",
+    "prettier-check": "prettier  --check \"src/{__tests__,pages,layouts,styles,components}/**/*.{js,jsx,ts,tsx}\" ",
+    "prettier-check-all": "prettier  --check .",
+    "prettier-format": "prettier --write \"src/{__tests__,pages,layouts,styles,components}/**/*.{js,jsx,ts,tsx}\"",
+    "prettier-format-all": "prettier --write .",
+    "type-check": "tsc --project tsconfig.json --pretty --noEmit",
+    "format": "prettier --write .",
+    "test": "vitest",
+    "test:c": "vitest run --coverage",
+    "prepare": "husky install"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.6.1",
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
     "@types/node": "20.1.7",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
+    "framer-motion": "^10.12.12",
     "next": "13.4.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
+    "@testing-library/react": "^14.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "@vitest/coverage-c8": "^0.31.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.0",
+    "jsdom": "^22.0.0",
+    "prettier": "^2.8.8",
+    "vitest": "^0.31.0"
   }
 }
