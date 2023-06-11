@@ -35,7 +35,7 @@ const rssItemSchema = new Schema<IRssItem>(
   {
     versionKey: false,
   }
-  );
+);
 
 const RssItem = models.RssItem || model<IRssItem>("RssItem", rssItemSchema);
 
