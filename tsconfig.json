@@ -21,6 +21,6 @@
       "@layouts/*": ["./src/layouts/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/lib/db.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/lib/dbConnect.ts"],
   "exclude": ["node_modules"]
 }

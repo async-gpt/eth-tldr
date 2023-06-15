@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import connectDB from "@/lib/db";
+import connectDB from "@/lib/dbConnect";
 import RssItem from "models/rssItems";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

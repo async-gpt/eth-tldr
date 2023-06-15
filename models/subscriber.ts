@@ -2,8 +2,6 @@ import { Schema, model, models, Document } from "mongoose";
 
 interface ISubscriber extends Document {
   email: string;
-  createdTime: Date;
-  lastUpdatedTime: Date;
 }
 
 const subscriberSchema = new Schema<ISubscriber>(
@@ -13,18 +11,9 @@ const subscriberSchema = new Schema<ISubscriber>(
       required: true,
       unique: true,
     },
-    createdTime: {
-      type: Date,
-      required: true,
-      default: Date.now,
-    },
-    lastUpdatedTime: {
-      type: Date,
-      required: true,
-      default: Date.now,
-    },
   },
   {
+    timestamps: true,
     versionKey: false,
   }
 );
