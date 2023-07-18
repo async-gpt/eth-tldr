@@ -4,7 +4,7 @@ module.exports = {
   async up(db) {
     const RSSFeed1 = new ObjectId();
     const RSSFeed2 = new ObjectId();
-    await db.collection("RSSFeeds").insertMany([
+    await db.collection("rssfeeds").insertMany([
       {
         _id: RSSFeed1,
         name: "news btc",
@@ -29,7 +29,7 @@ module.exports = {
         emailStatus: "unsent",
       },
     ]);
-    await db.collection("DailyEmailContent").insertMany([
+    await db.collection("dailyemailcontents").insertMany([
       {
         _id: new ObjectId(),
         date: new Date(),
