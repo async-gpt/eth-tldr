@@ -7,15 +7,15 @@ class SubscriberService {
     this.subscriberRepository = new SubscriberRepository();
   }
 
-  async createNewSubscriber (email: string) {
-    return await this.subscriberRepository.createSubscriber(email);  
+  async createNewSubscriber(email: string) {
+    return await this.subscriberRepository.createSubscriber(email);
   }
 
   async getSubscribers() {
     return await this.subscriberRepository.findSubscribers();
   }
 
-  async deleteSubscriberByEmail (email: string) {
+  async deleteSubscriberByEmail(email: string) {
     return await this.subscriberRepository.deleteSubscriber(email);
   }
 }
