@@ -1,14 +1,23 @@
-import mongoose from "mongoose";
+require("dotenv").config();
+const config = {
+  mongodb: {
+    url: process.env.DATA_MIGRATION_URI,
 
-const connectDB = async () => {
-  try {
-    await mongoose.connect(process.env.DATABASE_UTI, {
-      useUnifiedTopology: true,
+    options: {
       useNewUrlParser: true,
-    });
-    console.log("MongoDB connected");
-  } catch (err) {
-    console.error("MongoDB connection error:", err);
-  }
+      useUnifiedTopology: true,
+    },
+  },
+
+  migrationsDir: "migrations",
+
+  changelogCollectionName: "changelog",
+
+  migrationFileExtension: ".js",
+
+  useFileHash: false,
+
+  moduleSystem: "commonjs",
 };
-export default connectDB;
+
+module.exports = config;
