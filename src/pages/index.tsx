@@ -1,35 +1,17 @@
 import HeaderLayout from "@/layouts/HeaderLayout";
-import { Box, Heading, Container, Stack, Flex } from "@chakra-ui/react";
 
 export default function Home() {
   return (
     <HeaderLayout title="Homepage">
-      <Flex
-        direction="column"
-        alignItems="center"
-        justifyContent="center"
-        minHeight="85vh"
-        gap={4}
-        mb={8}
-        w="full"
-      >
-        <Container maxW={"3xl"}>
-          <Stack
-            as={Box}
-            textAlign={"center"}
-            spacing={{ base: 8, md: 14 }}
-            py={{ base: 20, md: 36 }}
-          >
-            <Heading
-              fontWeight={600}
-              fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
-              lineHeight={"110%"}
-            >
+      <div className="flex flex-col items-center justify-center min-h-screen gap-4 mb-8 w-full">
+        <div className="max-w-3xl">
+          <div className="text-center space-y-8 py-20 md:py-36">
+            <h1 className="font-semibold text-2xl sm:text-4xl md:text-6xl leading-110%">
               Home Page <br />
-            </Heading>
-          </Stack>
-        </Container>
-      </Flex>
+            </h1>
+          </div>
+        </div>
+      </div>
     </HeaderLayout>
   );
 }
