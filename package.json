@@ -20,9 +20,6 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.6.1",
-    "@emotion/react": "^11.11.0",
-    "@emotion/styled": "^11.11.0",
     "@types/migrate-mongo": "^10.0.0",
     "@types/mongoose": "^5.11.97",
     "@types/node": "20.1.7",
@@ -31,7 +28,6 @@
     "dotenv": "^16.3.1",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
-    "framer-motion": "^10.12.12",
     "mongoose": "^7.2.3",
     "next": "13.4.2",
     "react": "18.2.0",
@@ -44,12 +40,15 @@
     "@testing-library/react": "^14.0.0",
     "@vitejs/plugin-react": "^4.0.0",
     "@vitest/coverage-c8": "^0.31.0",
+    "autoprefixer": "^10.4.14",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.0",
     "jsdom": "^22.0.0",
     "migrate-mongo": "^10.0.0",
+    "postcss": "^8.4.27",
     "prettier": "^2.8.8",
+    "tailwindcss": "^3.3.3",
     "vitest": "^0.31.0"
   }
 }
