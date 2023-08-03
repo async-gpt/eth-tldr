@@ -3,6 +3,7 @@ import { Schema, model, models, Document } from "mongoose";
 export interface ISubscriber extends Document {
   email: string;
   isDeleted: boolean;
+  emailStatus: "sent" | "unsent" | "failed" | "pending";
 }
 
 const subscriberSchema = new Schema<ISubscriber>(
@@ -16,7 +17,13 @@ const subscriberSchema = new Schema<ISubscriber>(
       type: Boolean,
       default: false,
     },
+    emailStatus: {
+      type: String,
+      enum: ["sent", "unsent", "failed", "pending"],
+      default: "unsent",
+    },
   },
+
   {
     timestamps: true,
     versionKey: false,

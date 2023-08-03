@@ -1,21 +1,28 @@
-import Subscriber from "models/subscriber";
+import Subscriber, { ISubscriber } from "models/subscriber";
 
 class SubscriberRepository {
-  async createSubscriber(email: string) {
+  async createSubscriber(email: string): Promise<ISubscriber> {
     const subscriber = new Subscriber({ email });
-    await subscriber.save();
-    return subscriber;
+    return subscriber.save();
   }
 
-  async findSubscribers() {
-    const subscribers = await Subscriber.find();
-    return subscribers;
+  async findSubscriberByEmail(email: string): Promise<ISubscriber | null> {
+    return Subscriber.findOne({ email, isDeleted: false });
   }
 
-  async deleteSubscriber(email: string) {
-    const deletedSubscriber = await Subscriber.findOneAndDelete({ email });
-    return deletedSubscriber;
+  async findSubscribersByEmailStatus(
+    emailStatus: ISubscriber["emailStatus"]
+  ): Promise<ISubscriber[]> {
+    return Subscriber.find({ emailStatus, isDeleted: false });
+  }
+
+  async deleteSubscriberByEmail(email: string): Promise<ISubscriber | null> {
+    return Subscriber.findOneAndUpdate(
+      { email, isDeleted: false },
+      { isDeleted: true },
+      { new: true }
+    );
   }
 }
 
-export default SubscriberRepository;
+export default new SubscriberRepository();
